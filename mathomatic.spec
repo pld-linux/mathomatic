@@ -2,7 +2,7 @@ Summary:	Mathomatic - a symbolic math program
 Summary(pl):	Mathomatic - program do matematyki symbolicznej
 Name:		mathomatic
 Version:	10.4
-Release:	1
+Release:	2
 License:	Freeware
 Group:		Applications/Math
 Source0:	ftp://ftp.lightlink.com/pub/computer/math/am.zip
@@ -39,9 +39,13 @@ for i in *; do mv "$i" "`echo $i |tr A-Z a-z`";done
 rm -rf $RPM_BUILD_ROOT
 
 install -D ac $RPM_BUILD_ROOT%{_bindir}/am
-ln -sf am $RPM_BUILD_ROOT%{_bindir}/ac
+install -D ac $RPM_BUILD_ROOT/%{_bindir}/am
+cat <<EOF >$RPM_BUILD_ROOT/%{_bindir}/amc
+#!/bin/sh
+am -c
+EOF
 install -D am.1 $RPM_BUILD_ROOT%{_mandir}/man1/am.1
-echo ".so am.1" > $RPM_BUILD_ROOT%{_mandir}/man1/ac.1
+echo ".so am.1" > $RPM_BUILD_ROOT%{_mandir}/man1/amc.1
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 install *.in $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
