@@ -1,5 +1,5 @@
-Summary:	Mathomatic is a symbolic math program
-Summary(pl):	Mathomatic jest programem do matematyki symbolicznej
+Summary:	Mathomatic - a symbolic math program
+Summary(pl):	Mathomatic - program do matematyki symbolicznej
 Name:		mathomatic
 Version:	10.4
 Release:	1
@@ -7,7 +7,7 @@ License:	Freeware
 Group:		Applications/Math
 Source0:	ftp://ftp.lightlink.com/pub/computer/math/am.zip
 # Source0-md5:	8e240b74a89ecf31513cba65f37964ef
-URL:		http://www.mathomatic.com
+URL:		http://www.mathomatic.com/
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,12 +37,13 @@ for i in *; do mv "$i" "`echo $i |tr A-Z a-z`";done
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -D ac $RPM_BUILD_ROOT/%{_bindir}/am
-ln -sf am $RPM_BUILD_ROOT/%{_bindir}/ac
-install -D am.1 $RPM_BUILD_ROOT/%{_mandir}/man1/am.1
-echo ".so am.1" > $RPM_BUILD_ROOT/%{_mandir}/man1/ac.1
-install -d $RPM_BUILD_ROOT/%{_examplesdir}/%{name}
-install *.in $RPM_BUILD_ROOT/%{_examplesdir}/%{name}
+
+install -D ac $RPM_BUILD_ROOT%{_bindir}/am
+ln -sf am $RPM_BUILD_ROOT%{_bindir}/ac
+install -D am.1 $RPM_BUILD_ROOT%{_mandir}/man1/am.1
+echo ".so am.1" > $RPM_BUILD_ROOT%{_mandir}/man1/ac.1
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+install *.in $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -52,4 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc changes *.htm readme.txt
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-%{_examplesdir}/%{name}/
+%{_examplesdir}/%{name}
