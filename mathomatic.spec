@@ -37,16 +37,17 @@ for i in *; do mv "$i" "`echo $i |tr A-Z a-z`";done
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
 install -D ac $RPM_BUILD_ROOT%{_bindir}/am
+install -D am.1 $RPM_BUILD_ROOT%{_mandir}/man1/am.1
+echo ".so am.1" > $RPM_BUILD_ROOT%{_mandir}/man1/amc.1
+install *.in $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+
 cat <<EOF >$RPM_BUILD_ROOT%{_bindir}/amc
 #!/bin/sh
 am -c
 EOF
-install -D am.1 $RPM_BUILD_ROOT%{_mandir}/man1/am.1
-echo ".so am.1" > $RPM_BUILD_ROOT%{_mandir}/man1/amc.1
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
-install *.in $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
