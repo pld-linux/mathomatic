@@ -1,15 +1,16 @@
 Summary:	Mathomatic - a symbolic math program
 Summary(pl):	Mathomatic - program do matematyki symbolicznej
 Name:		mathomatic
-Version:	10.7b
+Version:	10.8
 Release:	1
-License:	Freeware
+License:	LGPL
 Group:		Applications/Math
 Source0:	ftp://ftp.lightlink.com/pub/computer/math/am.zip
-# Source0-md5:	8b64356499e69e1a13da542c9dddae2a
+# Source0-md5:	61ec04a5ab63105933acfdf2c344d7eb
 URL:		http://www.mathomatic.com/
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
+BuildRequires:	unzip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,10 +29,10 @@ rozwijany od roku 1986.
 
 %prep
 %setup -q -c
-for i in *; do mv "$i" "`echo $i |tr A-Z a-z`";done
 
 %build
 %{__make} \
+	CC=%{__cc} \
 	CFLAGS="%{rpmcflags} -DUNIX -DREADLINE -c" \
 	LFLAGS="-lreadline"
 
