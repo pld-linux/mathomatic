@@ -1,17 +1,18 @@
 Summary:	Mathomatic - a symbolic math program
 Summary(pl):	Mathomatic - program do matematyki symbolicznej
 Name:		mathomatic
-Version:	10.8
-Release:	1
+Version:	10.8c
+Release:	0.1
 License:	LGPL
 Group:		Applications/Math
-Source0:	ftp://ftp.lightlink.com/pub/computer/math/am.zip
-# Source0-md5:	61ec04a5ab63105933acfdf2c344d7eb
+Source0:	http://www.panix.com/~gesslein/am.tgz
+# Source0-md5:	2655bd057599336e3a4c65b3373ae913
 URL:		http://www.mathomatic.com/
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
-BuildRequires:	unzip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define         no_install_post_strip   1
 
 %description
 Mathomatic is a symbolic math program that can automatically solve,
@@ -28,19 +29,19 @@ i porównywaæ równania algebraiczne. Kod w C jest dostêpny darmowo dla
 rozwijany od roku 1986.
 
 %prep
-%setup -q -c
+%setup -q -n math
 
 %build
 %{__make} \
 	CC=%{__cc} \
 	CFLAGS="%{rpmcflags} -DUNIX -DREADLINE -c" \
-	LFLAGS="-lreadline"
+	LFLAGS="%{rpmldflags} -lreadline"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
-install -D ac $RPM_BUILD_ROOT%{_bindir}/am
+install -D am $RPM_BUILD_ROOT%{_bindir}/am
 install -D am.1 $RPM_BUILD_ROOT%{_mandir}/man1/am.1
 echo ".so am.1" > $RPM_BUILD_ROOT%{_mandir}/man1/amc.1
 install *.in $RPM_BUILD_ROOT%{_examplesdir}/%{name}
