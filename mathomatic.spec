@@ -1,12 +1,12 @@
 Summary:	Mathomatic - a symbolic math program
 Summary(pl):	Mathomatic - program do matematyki symbolicznej
 Name:		mathomatic
-Version:	11.3b
+Version:	11.3c
 Release:	1
 License:	LGPL
 Group:		Applications/Math
 Source0:	http://www.panix.com/~gesslein/%{name}-%{version}.tgz
-# Source0-md5:	79895a224f1671747ac46419bcdae981
+# Source0-md5:	1af6b2ae97d37b4d87bd3f3fbb787719
 URL:		http://www.mathomatic.com/
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
@@ -32,7 +32,7 @@ rozwijany od roku 1986.
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -DUNIX -DREADLINE -c" \
+	CFLAGS="%{rpmcflags} -DUNIX -DREADLINE -DVERSION=\\"\"%{version}\\"\"" \
 	LDFLAGS="%{rpmldflags} -lreadline"
 
 %install
