@@ -31,7 +31,7 @@ rozwijany od roku 1986.
 
 %build
 %{__make} \
-	CC=%{__cc} \
+	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags} -DUNIX -DREADLINE -c" \
 	LDFLAGS="%{rpmldflags} -lreadline"
 
