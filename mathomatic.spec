@@ -39,8 +39,7 @@ for i in *; do mv "$i" "`echo $i |tr A-Z a-z`";done
 rm -rf $RPM_BUILD_ROOT
 
 install -D ac $RPM_BUILD_ROOT%{_bindir}/am
-install -D ac $RPM_BUILD_ROOT/%{_bindir}/am
-cat <<EOF >$RPM_BUILD_ROOT/%{_bindir}/amc
+cat <<EOF >$RPM_BUILD_ROOT%{_bindir}/amc
 #!/bin/sh
 am -c
 EOF
