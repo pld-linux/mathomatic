@@ -20,8 +20,8 @@ available for a UNIX/Linux freeware version. It was written by George
 Gesslein II and has been under development since 1986.
 
 %description -l pl
-Mathomatic jest pakietem do obliczeñ w matematyce symbolicznej który
-mo¿e automatycznie rozwi±zywaæ, upraszaszczaæ, ró¿nicowaæ, kombinowaæ
+Mathomatic jest pakietem do obliczeñ w matematyce symbolicznej, który
+mo¿e automatycznie rozwi±zywaæ, upraszczaæ, ró¿nicowaæ, kombinowaæ
 i porównywaæ równania algebraiczne. Kod w C jest dostêpny darmowo dla
 ¶rodowisk UNIX/Linux. Zosta³ napisany przez George Gesslein II i jest
 rozwijany od roku 1986.
