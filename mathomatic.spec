@@ -1,12 +1,12 @@
 Summary:	Mathomatic - a symbolic math program
 Summary(pl):	Mathomatic - program do matematyki symbolicznej
 Name:		mathomatic
-Version:	12.4.12
+Version:	12.5.0
 Release:	1
 License:	LGPL
 Group:		Applications/Math
 Source0:	http://www.panix.com/~gesslein/%{name}-%{version}.tgz
-# Source0-md5:	ab11ee7bda794f7de7f0d2fb4ff07267
+# Source0-md5:	cefebb73893dd55e7ecadff33464ee18
 URL:		http://www.mathomatic.com/
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
@@ -40,7 +40,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
 install -D %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}
-install -D doc/%{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1/%{name}.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -49,5 +48,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.txt doc/*.htm
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
 %{_examplesdir}/%{name}
