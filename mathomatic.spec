@@ -1,5 +1,5 @@
 Summary:	Mathomatic - a symbolic math program
-Summary(pl.UTF-8):   Mathomatic - program do matematyki symbolicznej
+Summary(pl.UTF-8):	Mathomatic - program do matematyki symbolicznej
 Name:		mathomatic
 Version:	12.5.17
 Release:	1
