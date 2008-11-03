@@ -1,12 +1,13 @@
 Summary:	Mathomatic - a symbolic math program
+Summary(hu.UTF-8):	Mathomatic - szimbolikus számításokra képes program
 Summary(pl.UTF-8):	Mathomatic - program do matematyki symbolicznej
 Name:		mathomatic
-Version:	14.1.4
+Version:	14.2.2
 Release:	1
 License:	LGPL
 Group:		Applications/Math
 Source0:	http://www.panix.com/~gesslein/%{name}-%{version}.tar.bz2
-# Source0-md5:	85f5c734d4843fe41127366b07066e7e
+# Source0-md5:	faf88de486a4f81795cc5fa8385f8575
 URL:		http://www.mathomatic.com/math/
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
@@ -19,10 +20,17 @@ perform polynomial and complex arithmetic, etc. The C source code is
 available for a UNIX/Linux freeware version. It was written by George
 Gesslein II and has been under development since 1986.
 
+%description -l hu.UTF-8
+Mathomatic egy szimbolikus számításokra képes program, amely
+automatikus megold, egyszerűsít, differenciál, kombinál és hasonlít
+össze algebrai egyenleteket, ismeri polinomikus és komplex
+aritmetikát, stb. A C forráskód elérhető UNIX/Linux-ra. George
+Gesslein II írta, és 1986 óta fejlesztik.
+
 %description -l pl.UTF-8
 Mathomatic jest pakietem do obliczeń w matematyce symbolicznej, który
-może automatycznie rozwiązywać, upraszczać, różnicować, kombinować
-i porównywać równania algebraiczne. Kod w C jest dostępny darmowo dla
+może automatycznie rozwiązywać, upraszczać, różnicować, kombinować i
+porównywać równania algebraiczne. Kod w C jest dostępny darmowo dla
 środowisk UNIX/Linux. Został napisany przez George Gesslein II i jest
 rozwijany od roku 1986.
 
