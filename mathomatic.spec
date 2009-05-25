@@ -1,14 +1,13 @@
-# TODO: fix build problem
 Summary:	Mathomatic - a symbolic math program
 Summary(hu.UTF-8):	Mathomatic - szimbolikus számításokra képes program
 Summary(pl.UTF-8):	Mathomatic - program do matematyki symbolicznej
 Name:		mathomatic
-Version:	14.2.5
-Release:	1.1
+Version:	14.4.3
+Release:	1
 License:	LGPL
 Group:		Applications/Math
 Source0:	http://www.panix.com/~gesslein/%{name}-%{version}.tar.bz2
-# Source0-md5:	6799a619e1d826d74a99804519e24d12
+# Source0-md5:	03039fcfa54fe76c4b991fa06282e679
 URL:		http://www.mathomatic.com/math/
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
@@ -43,7 +42,8 @@ rozwijany od roku 1986.
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags} -DUNIX -DREADLINE -DVERSION=\\"\"%{version}\\"\"" \
 	LDFLAGS="%{rpmldflags}" \
-	LIBS="-lm -lreadline"
+	LIBS="-lm -lreadline" \
+	READLINE=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
